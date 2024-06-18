@@ -13,7 +13,7 @@ function Home() {
   }, [])
 
   const movieList = movies.map((movie) => {
-    return <MovieCard key={movie.id} title={movie.title} />
+    return <MovieCard key={movie.id} title={movie.title} movie={movie} />
   })
 
   return (
