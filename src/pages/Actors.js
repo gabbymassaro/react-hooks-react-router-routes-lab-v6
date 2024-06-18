@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import NavBar from "../components/NavBar"
 
 function Actors() {
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <NavBar />
       </header>
       <main>
+        <h1>Actors Page</h1>
         {/* Actor info here! */}
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Actors;
+export default Actors
