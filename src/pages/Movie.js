@@ -10,20 +10,26 @@ function Movie() {
   useEffect(() => {
     fetch(`http://localhost:4000/movies/${movieId}`)
       .then((r) => r.json())
-      .then((data) => console.log(data))
+      .then((data) => setMovie(data))
       .catch((error) => console.error(error))
   }, [movieId])
 
-  // if (!user.name) {
-  //   return <h1>Loading...</h1>
-  // }
+  if (!movie.id) {
+    return <h1>Loading...</h1>
+  }
 
   return (
     <>
       <header>
         <NavBar />
       </header>
-      <main>{/* Movie info here! */}</main>
+      <main>
+        <h1>{movie.title}</h1>
+        <p>{movie.time}</p>
+        {movie.genres.map((genre, index) => (
+          <span key={index}>{genre}</span>
+        ))}
+      </main>
     </>
   )
 }
