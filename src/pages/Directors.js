@@ -11,8 +11,6 @@ function Directors() {
       .catch((error) => console.error(error))
   }, [])
 
-  console.log(directors)
-
   return (
     <>
       <header>
@@ -20,7 +18,16 @@ function Directors() {
       </header>
       <main>
         <h1>Directors Page</h1>
-        {/* Director info here! */}
+        {directors.map((director, index) => (
+          <article key={index} name={director.name}>
+            <h2>{director.name}</h2>
+            <ul>
+              {director.movies.map((movie, movieIndex) => (
+                <li key={movieIndex}>{movie}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </main>
     </>
   )
